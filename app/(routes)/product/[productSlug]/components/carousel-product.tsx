@@ -21,22 +21,29 @@ interface CarouselProductProps {
 const CarouselProduct = (props: CarouselProductProps) => {
   const { images } = props;
 
+  // Verificar que images y images.data están definidos y que images.data es un array
+  const hasImages = images?.data?.length > 0;
+
   return (
     <div className="sm:px-16 relative">
       <Carousel>
         <CarouselContent>
-          {images.data.map((image) => (
-            <CarouselItem key={image.id}>
-              <img
-                src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${image.attributes.url}`}
-                alt="Imagen Product"
-                className="rounded-lg"
-              />
-            </CarouselItem>
-          ))}
+          {hasImages ? (
+            images.data.map((image) => (
+              <CarouselItem key={image.id}>
+                <img
+                  src={`${image.attributes.url}`}
+                  alt={`Product Image ${image.id}`}
+                  className="rounded-lg"
+                />
+              </CarouselItem>
+            ))
+          ) : (
+            <p>No images available</p>
+          )}
         </CarouselContent>
         <CarouselPrevious className="hidden sm:flex sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:left-4" />
-        <CarouselNext className="hidden sm:flex sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:right-4"  />  
+        <CarouselNext className="hidden sm:flex sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:right-4" />
       </Carousel>
     </div>
   );

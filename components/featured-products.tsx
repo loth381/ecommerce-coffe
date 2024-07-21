@@ -37,7 +37,7 @@ const FeacturedProducts = () => {
                       <CardContent className="relative flex items-center justify-center px-6 py-2">
                       {images?.data?.[0]?.attributes?.url ? (
                           <img
-                            src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${images.data[0].attributes.url}`}
+                            src={`${images.data[0].attributes.url}`}
                             alt="Image featured"
                           />
                         ) : (

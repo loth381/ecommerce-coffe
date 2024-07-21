@@ -23,7 +23,7 @@ const ChooseCategory = () => {
             >
               {category.attributes?.mainImage?.data?.attributes?.url ? (
                 <img
-                  src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${category.attributes.mainImage.data.attributes.url}`}
+                  src={`${category.attributes.mainImage.data.attributes.url}`}
                   alt={category.attributes.categoryName}
                   className="max-w-[270px] transition duration-300 ease-in-out rounded-lg hover:scale-110"
                 />

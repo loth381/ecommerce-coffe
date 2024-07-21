@@ -19,42 +19,50 @@ const LovedItemProduct = (props: LovedItemProductProps) => {
   const { removeLovedItem } = UseLovedProducts();
   const { addItem } = useCart();
 
-  const addToCheckout = () =>{
-    addItem(product)
-    removeLovedItem(product.id)
-  }
+  const handleAddToCheckout = () => {
+    addItem(product);
+    removeLovedItem(product.id);
+  };
+
+  // Verificar que images.data existe y que tiene al menos un elemento
+  const imageUrl = product.attributes.images?.data?.[0]?.attributes?.url;
+  const hasImage = Boolean(imageUrl);
+
   return (
     <li className="flex py-6 border-b">
       <div onClick={() => router.push(`/product/${product.attributes.slug}`)}>
-        <img
-          src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${product.attributes.images.data[0].attributes.url}`}
-          alt="Productos"
-          className="w-24 h-24 overflow-hidden rounded-md sm:w-auto sm:h-32"
-        />
+        {hasImage ? (
+          <img
+            src={`${imageUrl}`}
+            alt={product.attributes.productName}
+            className="w-24 h-24 overflow-hidden rounded-md sm:w-auto sm:h-32"
+          />
+        ) : (
+          <div className="w-24 h-24 overflow-hidden rounded-md sm:w-auto sm:h-32 bg-gray-200 flex items-center justify-center">
+            No Image
+          </div>
+        )}
       </div>
-      <div className="flex justify-between flex-1  px-6">
+      <div className="flex justify-between flex-1 px-6">
         <div>
-          <h2 className="text-lg font-bold">
-            {product.attributes.productName}
-          </h2>
+          <h2 className="text-lg font-bold">{product.attributes.productName}</h2>
           <p className="font-bold">{formatPrice(product.attributes.price)}</p>
-          {/* <div className="items-center flex justify-between gap-3">
-            <p className="px-2 py-1  text-sm text-white bg-black rounded-full dark:bg-white dark:text-black">
-              {product.attributes.taste}
-            </p>
-            <p className="px-2 py-1  text-sm text-white bg-yellow-900 rounded-full w-fit">
-              {product.attributes.origin}
-            </p>
-          </div> */}
-          <ProductTasteOrigin  origin={product.attributes.origin} taste={product.attributes.taste} />
-          <Button className="mt-5 rounded-full" onClick={addToCheckout}>añadir al carro</Button>
+          <ProductTasteOrigin 
+            origin={product.attributes.origin} 
+            taste={product.attributes.taste} 
+          />
+          <Button className="mt-5 rounded-full" onClick={handleAddToCheckout}>
+            Añadir al carro
+          </Button>
         </div>
         <div>
-          <button className={cn(
-            "rounded-full flex items-center justify-center bg-white border shadow-md p-1 hover:scale-110 transition"
-          )}>
-          <X size={20} onClick={() => removeLovedItem(product.id)} />
-
+          <button
+            className={cn(
+              "rounded-full flex items-center justify-center bg-white border shadow-md p-1 hover:scale-110 transition"
+            )}
+            onClick={() => removeLovedItem(product.id)}
+          >
+            <X size={20} />
           </button>
         </div>
       </div>

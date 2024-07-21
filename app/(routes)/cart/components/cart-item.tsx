@@ -20,11 +20,15 @@ const CartItem = (props: CartItemProps) => {
         onClick={() => router.push(`/product/${product.attributes.slug}`)}
         className="cursor-pointer"
       >
-        <img
-          src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${product.attributes.images.data[0].attributes.url}`}
-          alt="Produtos"
-          className="w-24 h-24 overflow-hidden rounded-md sm:w-auto sm:h-32 "
-        />
+        {product.attributes.images?.data?.[0]?.attributes?.url ? (
+          <img
+            src={`${product.attributes.images.data[0].attributes.url}`}
+            alt={product.attributes.productName}
+            className="w-24 h-24 overflow-hidden rounded-md sm:w-auto sm:h-32"
+          />
+        ) : (
+          <p>No image available</p>
+        )}
       </div>
       <div className="flex justify-between flex-1 px-6">
         <div>
