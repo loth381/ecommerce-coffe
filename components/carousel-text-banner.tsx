@@ -7,37 +7,34 @@ import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 export const dataCarouselTop = [
   {
     id: 1,
-    title: "Envio en 24/48 h",
-    description:
-      "como cliente vip, tus envios en 24/48 horas. obten mas infomarcion",
-    link: "#",
+    title: "Envío en 24/48 h",
+    description: "Como cliente VIP, tus envíos en 24/48 horas. Obtén más información.",
+    link: "#", // Actualiza con la URL real
   },
   {
     id: 2,
-    title: "Consigue hasta un -25% en compras superiores a s/40",
-    description:
-      "-20% al gastar s/100 o -25% al gastar s/150, usa el codigo Cafecito",
-    link: "#",
+    title: "Consigue hasta un -25% en compras superiores a S/40",
+    description: "-20% al gastar S/100 o -25% al gastar S/150. Usa el código Cafecito.",
+    link: "#", // Actualiza con la URL real
   },
   {
     id: 3,
-    title: "Devolucion y entregas gratuitas",
-    description:
-      "como cliente vip,  tienes envios y devoluciones gratis en plan",
-    link: "#",
+    title: "Devolución y entregas gratuitas",
+    description: "Como cliente VIP, tienes envíos y devoluciones gratis.",
+    link: "#", // Actualiza con la URL real
   },
   {
-    id: 1,
-    title: "Comprar novedades",
-    description: "Todas las novedades al 50% descuento",
-    link: "#",
+    id: 4, // ID único
+    title: "Compra novedades",
+    description: "Todas las novedades al 50% de descuento.",
+    link: "#", // Actualiza con la URL real
   },
 ];
 
 const CarouselTextBanner = () => {
   const router = useRouter();
   return (
-    <div className="bg-gray-200  dark:bg-primary">
+    <div className="bg-gray-200 dark:bg-primary">
       <Carousel
         className="w-full max-w-4xl mx-auto"
         plugins={[

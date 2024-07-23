@@ -5,17 +5,22 @@ const BannerProduct = () => {
   return (
     <>
       <div className="mt-4 text-center">
-        <p>Sumergete en una experiencia única</p>
-        <h4 className="mt-2 text-5xl font-extrabold uppercase ">Cafe Exquisito</h4>
-        <p className="my-2 text-lg">Despierda tus sentidos con cada sorbo</p>
-        <Link href="#" className={buttonVariants()}>
+        <p className="text-lg">Sumérgete en una experiencia única</p>
+        <h4 className="mt-2 text-5xl font-extrabold uppercase">Café Exquisito</h4>
+        <p className="my-2 text-lg">Despierta tus sentidos con cada sorbo</p>
+        <Link href="/comprar" className={buttonVariants()} aria-label="Comprar café">
           Comprar
         </Link>
       </div>
-      <div className="h-[350px] bg-cover lg:h-[600px]  bg-[url('/slider-image.jpg')] bg-center mt-5 ">
-
+      <div 
+        className="h-[350px] bg-cover lg:h-[600px] bg-[url('/slider-image.jpg')] bg-center mt-5"
+        role="img"
+        aria-label="Café exquisito en un fondo atractivo"
+      >
+        {/* Agrega un aria-label para describir la imagen si es relevante */}
       </div>
     </>
   );
 };
+
 export default BannerProduct;

@@ -4,36 +4,34 @@ import Link from "next/link"
 import * as React from "react"
 
 import {
-    NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger,
-    navigationMenuTriggerStyle,
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils"
 
+// Datos de los componentes del menú con descripciones mejoradas para SEO
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Cafe grano",
+    title: "Café en grano",
     href: "/category/grano",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+    description: "Descubre nuestra selección de café en grano para una frescura incomparable.", // Descripción mejorada para SEO
   },
   {
-    title: "Cafe molido",
+    title: "Café molido",
     href: "/category/molido",
-    description:
-      "For sighted users to preview content available behind a link.",
+    description: "Encuentra café molido listo para preparar y disfrutar.", // Descripción mejorada para SEO
   },
   {
-    title: "Cafe de capsula",
+    title: "Café en cápsulas",
     href: "/category/capsula",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    description: "Conveniencia y sabor en cada cápsula para una experiencia rápida y deliciosa.", // Descripción mejorada para SEO
   },
-]
+];
 
 const MenuList = () => {
   return (
@@ -48,6 +46,7 @@ const MenuList = () => {
                   <a
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/"
+                    aria-label="Learn more about us"
                   >
                    
                     <div className="mb-2 mt-4 text-lg font-medium">

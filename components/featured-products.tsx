@@ -19,7 +19,7 @@ const FeacturedProducts = () => {
   
   return (
     <div className="max-w-6xl py-4 mx-auto sm:py-16 sm:px-24">
-      <h3 className="px-6 text-3xl sm:pb-8">Poductos destacados</h3>
+      <h3 className="px-6 text-3xl sm:pb-8">Productos destacados</h3>
       <Carousel>
         <CarouselContent className="-ml-2 md:-ml-4">
           {loading && <SkeletonSchema grid={3} />}
@@ -38,7 +38,8 @@ const FeacturedProducts = () => {
                       {images?.data?.[0]?.attributes?.url ? (
                           <img
                             src={`${images.data[0].attributes.url}`}
-                            alt="Image featured"
+                            alt={productName || "Imagen destacada del producto"}
+                            className="fixed-size-image transition duration-300 ease-in-out "
                           />
                         ) : (
                           <p>No image available</p>
@@ -87,3 +88,4 @@ const FeacturedProducts = () => {
 };
 
 export default FeacturedProducts;
+

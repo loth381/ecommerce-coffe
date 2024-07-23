@@ -22,6 +22,7 @@ export const useCart = create(
           title: "El producto ya existe en el carrito",
           variant: "destructive",
         });
+        ;
       }
 
       set({

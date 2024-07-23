@@ -1,7 +1,7 @@
 "use client";
 import { useCart } from "@/hooks/use-cart";
 import { UseLovedProducts } from "@/hooks/use-loved-products";
-import { BaggageClaim, Heart, ShoppingCart, User } from "lucide-react";
+import { Heart, ShoppingCart } from "lucide-react";
 import { useRouter } from "next/navigation";
 import ItemsMenuMobile from "./items-menu-mobile";
 import MenuList from "./menu-list";
@@ -9,7 +9,7 @@ import ToggleTheme from "./toggle-theme";
 
 const Navbar = () => {
   const router = useRouter();
-  const cart = useCart();
+  const { items: cartItems } = useCart();
   const {lovedItems} =  UseLovedProducts();
   return (
     <div className="flex items-center  justify-between  p-4  mx-auto cursor-pointer sm:max-w-4xl md:max-w-6xl">
@@ -22,26 +22,26 @@ const Navbar = () => {
       <div className="flex sm:hidden">
         <ItemsMenuMobile />
       </div>
-      <div className=" flex items-center justify-between gap-2 sm:gap-7">
-        {cart.items.length === 0 ? (
-          <ShoppingCart
-            strokeWidth="1"
-            className="cursor-pointer"
-            onClick={() => router.push("/cart")}
-          />
-        ) : (
-          <div className="flex gap-1 " onClick={() => router.push("/cart")}>
-            <BaggageClaim strokeWidth={1} className="cursor-pointer" />
-            <span>{cart.items.length}</span>
-          </div>
-        )}
+      <div className="flex items-center gap-4 sm:gap-6">
+        <button
+          onClick={() => router.push("/cart")}
+          aria-label={`Ir al carrito${cartItems.length ? ` con ${cartItems.length} artículo(s)` : ''}`}
+          className="relative flex items-center"
+        >
+          {cartItems.length > 0 && (
+            <span className="absolute -top-2 -right-2 bg-slate-900 dark:bg-white dark:text-slate-950 text-white text-xs rounded-full px-2 py-1">
+              {cartItems.length}
+            </span>
+          )}
+          <ShoppingCart strokeWidth="1" className="cursor-pointer" />
+        </button>
 
         <Heart
           strokeWidth="1"
           className={`cursor-pointer ${lovedItems.length > 0 && "fill-black dark:fill-white"}`}
           onClick={() => router.push("/loved-products")}
         />
-        <User strokeWidth="1" className="cursor-pointer" />
+        
         <ToggleTheme />
       </div>
     </div>

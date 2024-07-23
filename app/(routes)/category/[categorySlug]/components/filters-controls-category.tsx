@@ -2,6 +2,7 @@ import FilterOrigin from "./filter-origin";
 
 type FiltersControlsCategoryProps = {
   setFilterOrigin: (origin: string) => void;
+  
 };
 
 const FiltersControlsCategory = (props: FiltersControlsCategoryProps) => {

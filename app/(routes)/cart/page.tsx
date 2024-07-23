@@ -23,13 +23,14 @@ export default function Page() {
         products: items,
       });
       removeAll();
-      alert("Pago realizado con éxito");
+      
       await stripe?.redirectToCheckout({
         sessionId: res.data.stripeSession.id,
       });
       
     } catch (error) {
-      console.log(error);
+      console.error("Error al realizar el pago:", error); // Mejor manejo de errores
+      alert("Hubo un problema al procesar el pago. Inténtalo de nuevo."); // Mensaje de error para el usuario
     }
   };
 
@@ -54,12 +55,12 @@ export default function Page() {
           </ul>
         </div>
         <div className="max-w-xl">
-          <div className="p-6 rounded-lg bg-slate-100">
+          <div className="p-6 rounded-lg bg-slate-100 shadow-lg">
             <p className="mb-3 text-lg font-semibold">order</p>
             <Separator />
             <div className="flex justify-between gap-5 my-5">
-              <p>order total</p>
-              <p>{formatPrice(totalPrice)}</p>
+            <p className="font-medium">Total del Pedido:</p> 
+            <p className="font-bold">{formatPrice(totalPrice)}</p> 
             </div>
             <div className="flex items-center justify-center w-full mt-3">
               <Button className="w-full" onClick={buyStripe}>

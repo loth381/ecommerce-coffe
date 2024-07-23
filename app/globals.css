@@ -67,3 +67,8 @@
       @apply bg-background text-foreground;
     }
   }
+  .fixed-size-image {
+  width: 100%; /* Ajusta según sea necesario */
+  height: 200px; /* Ajusta según sea necesario */
+  object-fit: cover; /* Opciones: cover, contain, etc. */
+}

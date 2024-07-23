@@ -22,10 +22,10 @@ const CarouselProduct = (props: CarouselProductProps) => {
   const { images } = props;
 
   // Verificar que images y images.data están definidos y que images.data es un array
-  const hasImages = images?.data?.length > 0;
+  const hasImages = Array.isArray(images?.data) && images.data.length > 0;
 
   return (
-    <div className="sm:px-16 relative">
+    <div className="relative sm:px-16 px-4">
       <Carousel>
         <CarouselContent>
           {hasImages ? (
@@ -34,16 +34,19 @@ const CarouselProduct = (props: CarouselProductProps) => {
                 <img
                   src={`${image.attributes.url}`}
                   alt={`Product Image ${image.id}`}
-                  className="rounded-lg"
+                  className="w-full h-auto object-cover rounded-lg"
+                  loading="lazy" 
                 />
               </CarouselItem>
             ))
           ) : (
-            <p>No images available</p>
+            <div className="w-full h-48 flex items-center justify-center bg-gray-200 rounded-lg"> {/* Cambiado: Contenedor estilizado para mensaje "No images available" */}
+              <p className="text-gray-500">No images available</p>
+            </div>
           )}
         </CarouselContent>
-        <CarouselPrevious className="hidden sm:flex sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:left-4" />
-        <CarouselNext className="hidden sm:flex sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:right-4" />
+        <CarouselPrevious className="hidden sm:flex sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:left-4 z-10" /> {/* Cambiado: Añadido z-10 para asegurar visibilidad sobre el contenido */}
+        <CarouselNext className="hidden sm:flex sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:right-4 z-10" /> {/* Cambiado: Añadido z-10 para asegurar visibilidad sobre el contenido */}
       </Carousel>
     </div>
   );

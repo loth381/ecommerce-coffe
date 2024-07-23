@@ -10,20 +10,36 @@ type FiltersOriginProps = {
 const FilterOrigin = (props: FiltersOriginProps) => {
   const { setFilterOrigin } = props;
   const { result, loading }: FilterTypes = useGetProductField();
+
   return (
     <div className="my-5">
-      <p className="mb-3 font-bold">Origen</p>
-      {loading && result === null && <p>Cargando origen...</p>}
+      <p className="mb-3 text-lg font-semibold">Origen</p>
+      {loading && result === null && <p className="text-gray-500">Cargando origen...</p>}
+      
       <RadioGroup onValueChange={(value) => setFilterOrigin(value)}>
-        {result !== null &&
+        {/* Opción para mostrar todos los productos */}
+        <div className="flex items-center space-x-2 mb-2">
+          <RadioGroupItem value="" id="all" />
+          <Label htmlFor="all" className="cursor-pointer">
+            Todos
+          </Label>
+        </div>
+
+        {result !== null && result.schema.attributes.origin.enum.length > 0 ? (
           result.schema.attributes.origin.enum.map((origin: string) => (
-            <div key={origin} className="flex items-center space-x-2">
+            <div key={origin} className="flex items-center space-x-2 mb-2">
               <RadioGroupItem value={origin} id={origin} />
-              <Label htmlFor={origin}>{origin}</Label>
+              <Label htmlFor={origin} className="cursor-pointer">
+                {origin}
+              </Label>
             </div>
-          ))}
+          ))
+        ) : (
+          <p className="text-gray-500">No hay opciones disponibles</p>
+        )}
       </RadioGroup>
     </div>
   );
 };
+
 export default FilterOrigin;
