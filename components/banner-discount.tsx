@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 
@@ -12,10 +14,10 @@ const BannerDiscount = () => {
         -20% al gastar s/100 o -25% al gastar s/150. Usa el código <span className="font-bold">Avendaño</span>
       </h3>
       <div className="max-w-md mx-auto sm:flex justify-center gap-8 mt-5">
-        <Link href="/comprar" className={buttonVariants()} aria-label="Comprar ahora">
+        <Link href="/allproducts" className={buttonVariants()} aria-label="Comprar ahora">
           Comprar
         </Link>
-        <Link href="/informacion" className={buttonVariants({ variant: "outline" })} aria-label="Más información">
+        <Link href="/allproducts" className={buttonVariants({ variant: "outline" })} aria-label="Más información">
           Más Información
         </Link>
       </div>

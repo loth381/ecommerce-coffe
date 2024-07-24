@@ -52,7 +52,7 @@ const CartItem = (props: CartItemProps) => {
           <div>
           <button
             className={cn(
-              "rounded-full flex items-center justify-center bg-white border shadow-md p-1 hover:bg-red-200 hover:scale-110 transition" // Cambié el efecto de hover para resaltar el botón de eliminar
+              "rounded-full flex items-center justify-center  dark:bg-slate-900 dark:text-whitebg-white border shadow-md p-1 hover:bg-red-200 hover:scale-110 transition" // Cambié el efecto de hover para resaltar el botón de eliminar
             )}
             onClick={() => removeItem(product.id)}
             aria-label={`Remove ${product.attributes.productName} from cart`} // Añadido aria-label para accesibilidad

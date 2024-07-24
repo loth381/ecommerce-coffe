@@ -8,7 +8,7 @@ const BannerProduct = () => {
         <p className="text-lg">Sumérgete en una experiencia única</p>
         <h4 className="mt-2 text-5xl font-extrabold uppercase">Café Exquisito</h4>
         <p className="my-2 text-lg">Despierta tus sentidos con cada sorbo</p>
-        <Link href="/comprar" className={buttonVariants()} aria-label="Comprar café">
+        <Link href="/allproducts" className={buttonVariants()} aria-label="Comprar café">
           Comprar
         </Link>
       </div>
@@ -17,7 +17,7 @@ const BannerProduct = () => {
         role="img"
         aria-label="Café exquisito en un fondo atractivo"
       >
-        {/* Agrega un aria-label para describir la imagen si es relevante */}
+        
       </div>
     </>
   );

@@ -58,7 +58,7 @@ const MenuList = () => {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/shop" title="Tienda">
+              <ListItem href="/allproducts" title="Tienda">
               Accede  a toda tu informacion,tus pedidos y mucho mas.
               </ListItem>
               <ListItem href="/offers" title="Ofertas">

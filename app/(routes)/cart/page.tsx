@@ -6,6 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { useCart } from "@/hooks/use-cart";
 import { formatPrice } from "@/lib/formatPrice";
 import { loadStripe } from "@stripe/stripe-js";
+import { FaWhatsapp } from "react-icons/fa";
 import CartItem from "./components/cart-item";
 
 export default function Page() {
@@ -34,6 +35,15 @@ export default function Page() {
     }
   };
 
+  const handleWhatsApp = () => {
+    const productDetails = items.map((item) => `- ${item.attributes.productName}: ${formatPrice(item.attributes.price)}`).join("\n");
+    const message = `Hola, me gustaría comprar los siguientes productos:\n\n${productDetails}\n\nTotal: ${formatPrice(totalPrice)}`;
+    const phoneNumber = "51930134408"; // Reemplaza con tu número de WhatsApp
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappLink, "_blank");
+  };
+
   // const handlePurchase = () => {
   //   const productDetails = items.map((item) => `- ${item.attributes.name}: ${formatPrice(item.attributes.price)}`).join("\n");
   //   const message = `Hola, me gustaría comprar los siguientes productos:\n\n${productDetails}\n\nTotal: ${formatPrice(totalPrice)}`;
@@ -56,15 +66,20 @@ export default function Page() {
         </div>
         <div className="max-w-xl">
           <div className="p-6 rounded-lg bg-slate-100 shadow-lg">
-            <p className="mb-3 text-lg font-semibold">order</p>
+            <p className="mb-3 text-lg font-semibold dark:text-slate-900">order</p>
             <Separator />
             <div className="flex justify-between gap-5 my-5">
-            <p className="font-medium">Total del Pedido:</p> 
-            <p className="font-bold">{formatPrice(totalPrice)}</p> 
+            <p className="font-medium dark:text-slate-900">Total del Pedido:</p> 
+            <p className="font-bold dark:text-slate-900" >{formatPrice(totalPrice)}</p> 
             </div>
             <div className="flex items-center justify-center w-full mt-3">
-              <Button className="w-full" onClick={buyStripe}>
+              <Button className="w-full dark:bg-slate-900 dark:text-white" onClick={buyStripe}>
                 Comprar
+              </Button>
+            </div>
+            <div className="flex items-center justify-center w-full mt-3">
+              <Button className="w-full flex items-center justify-center dark:bg-slate-900 dark:text-white" onClick={handleWhatsApp}>
+                <FaWhatsapp className="mr-2" /> Contactar por WhatsApp
               </Button>
             </div>
           </div>

@@ -58,7 +58,7 @@ const LovedItemProduct = (props: LovedItemProductProps) => {
         <div>
           <button
             className={cn(
-              "rounded-full flex items-center justify-center bg-white border shadow-md p-1 hover:scale-110 transition"
+              "rounded-full flex items-center justify-center dark:bg-slate-900 dark:text-white bg-white border shadow-md p-1 hover:scale-110 transition"
             )}
             onClick={() => removeLovedItem(product.id)}
           >
