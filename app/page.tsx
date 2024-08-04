@@ -1,10 +1,7 @@
-import BannerDiscount from "@/components/banner-discount";
-import BannerProduct from "@/components/banner-product";
-import CarouselTextBanner from "@/components/carousel-text-banner";
-import ChooseCategory from "@/components/choose-category";
-import FeacturedProducts from "@/components/featured-products";
+import Comida from "@/components/comida";
 import HomeBanner from "@/components/home";
 import ImageCarousel from "@/components/ImageSlider";
+import Menu from "@/components/menu";
 
 
 
@@ -12,12 +9,14 @@ export default function Home() {
   return (
     <main>
       <HomeBanner />
-      <CarouselTextBanner/>
-      <FeacturedProducts />
+      <Comida />
+      <Menu />
+     <ImageCarousel />
+      {/* <CarouselTextBanner/> */}
+      {/* <FeacturedProducts />
       <BannerDiscount />
       <ChooseCategory />
-      <BannerProduct />
-     <ImageCarousel />
+      <BannerProduct /> */}
     </main>
   );
 }

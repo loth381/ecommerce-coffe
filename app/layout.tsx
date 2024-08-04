@@ -2,6 +2,7 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
+import "@fontsource/bebas-neue";
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
@@ -75,7 +76,7 @@ export default function RootLayout({
             speed={200}
             shadow="0 0 10px #2299DD,0 0 5px #2299DD"
           />
-          <Navbar />
+          <Navbar  />
           {children}
           <Toaster />
           <Footer />

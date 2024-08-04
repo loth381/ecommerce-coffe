@@ -12,7 +12,7 @@ const Navbar = () => {
   const { items: cartItems } = useCart();
   const {lovedItems} =  UseLovedProducts();
   return (
-    <div className="flex items-center  justify-between  p-4  mx-auto cursor-pointer sm:max-w-4xl md:max-w-6xl">
+    <div className="flex items-center   justify-between  p-4  mx-auto cursor-pointer sm:max-w-4xl md:max-w-6xl">
       <h1 className="text-3xl" onClick={() => router.push("/")}>
         Cafeteria <span className="font-bold">Avendaño</span>
       </h1>
