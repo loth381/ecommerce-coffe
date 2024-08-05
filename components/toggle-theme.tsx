@@ -1,40 +1,20 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import Link from "next/link";
+import { TbTruckDelivery } from "react-icons/tb";
 
 const ToggleTheme = () => {
-  const { theme, setTheme } = useTheme();
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(theme === "dark");
-
-  useEffect(() => {
-    setIsDarkMode(theme === "dark");
-  }, [theme]);
-
-  const toggleTheme = () => {
-    const newTheme = isDarkMode ? "light" : "dark";
-    setTheme(newTheme);
-    setIsDarkMode(!isDarkMode);
-  };
 
   return (
-    <Button variant="outline" size="icon" onClick={toggleTheme}>
-      {/* Icono del sol para el modo claro */}
-      <Sun
-        className={`h-[1.2rem] w-[1.2rem] transition-transform duration-300 ${
-          isDarkMode ? "rotate-90 scale-0" : "rotate-0 scale-100"
-        }`}
-      />
-      {/* Icono de la luna para el modo oscuro */}
-      <Moon
-        className={`absolute h-[1.2rem] w-[1.2rem] transition-transform duration-300 ${
-          isDarkMode ? "rotate-0 scale-100" : "rotate-90 scale-0"
-        }`}
-      />
-      <span className="sr-only">Toggle theme</span>
-    </Button>
+    <div>
+      <Link
+          href="/allproducts"
+          className=" text-lg md:text-[18px] px-5 py-3 flex justify-center items-center bg-slate-800 text-white rounded-lg shadow-lg hover:bg-yellow-600 transition duration-300"
+          aria-label="Comprar ahora"
+        >
+        <TbTruckDelivery  className="px-1" size={30} /> Ordena Ya
+        </Link>
+    </div>
   );
 };
 

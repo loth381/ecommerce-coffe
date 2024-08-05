@@ -27,7 +27,7 @@ const Menu = () => {
         className="absolute  hidden md:block"
       />
       <div
-        className=" xl:px-40 2xl:px-56 bg-cover bg-center relative items-center py-28 inset-0 bg-slate-100 bg-opacity-50"
+        className=" xl:px-40 2xl:px-56 dark:bg-slate-50 bg-cover bg-center relative items-center py-28 inset-0 bg-slate-100 bg-opacity-50"
       >
         <div className="flex flex-col items-center px-2">
           <p className="text-[20px] font-semibold text-red-700 py-4">
