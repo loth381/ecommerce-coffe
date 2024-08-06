@@ -11,12 +11,12 @@ const HomeBanner: React.FC = () => {
     {
       name: "RESTAURANTE",
       description: "LUREMY",
-      imageUrl: "/homelomo.webp",
+      imageUrl: "/ayacucho.webp",
     },
     {
       name: "CAFETERÍA",
       description: "LUREMY",
-      imageUrl: "/gallery2.webp", // Cambié la segunda imagen para la demostración
+      imageUrl: "/fondohome.webp", // Cambié la segunda imagen para la demostración
     },
   ];
 
@@ -42,7 +42,7 @@ const HomeBanner: React.FC = () => {
               exit={{ opacity: 0, scale: 1.05 }}
               transition={{ duration: 1, ease: "easeInOut" }}
             >
-              <div className="absolute inset-0 bg-black bg-opacity-20 flex justify-center items-center">
+              <div className="absolute inset-0 bg-black bg-opacity-0 flex justify-center items-center">
                 <div className="relative w-[320px] h-[320px] sm:w-[450px] sm:h-[450px] lg:w-[550px] lg:h-[550px] xl:w-[700px] xl:h-[700px] border-radius-full overflow-hidden mx-auto">
                   <motion.div
                     className="absolute inset-0 p-2 rounded-full"

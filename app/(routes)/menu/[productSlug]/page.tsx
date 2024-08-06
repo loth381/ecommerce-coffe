@@ -22,7 +22,7 @@ const ProductDetails = ({ params }: { params: { productSlug: string } }) => {
   }
 
   return (
-    <div className="max-w-6xl py-4 mx-auto sm:py-32 sm:px-24">
+    <div className="max-w-[1500px] py-32 mx-auto sm:py-48 sm:px-24">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           {/* Pasando el producto correctamente al componente Products */}

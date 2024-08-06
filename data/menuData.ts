@@ -33,7 +33,47 @@ export const data: MenuData = {
       slug: "producto-a",
       imagenes: ["/categorias02.jpg", "/categorias03.jpeg"],
     },
-    // ...otros productos
+    {
+      imagen: "/categorias02.jpg",
+      nombre: "Producto A",
+      descripcion: "Descripción del Producto A, de alta calidad.",
+      precio: 10.0,
+      slug: "producto-a",
+      imagenes: ["/categorias02.jpg", "/categorias03.jpeg"],
+    },
+    {
+      imagen: "/categorias02.jpg",
+      nombre: "Producto A",
+      descripcion: "Descripción del Producto A, de alta calidad.",
+      precio: 10.0,
+      slug: "producto-a",
+      imagenes: ["/categorias02.jpg", "/categorias03.jpeg"],
+    },
+    {
+      imagen: "/categorias02.jpg",
+      nombre: "Producto A",
+      descripcion: "Descripción del Producto A, de alta calidad.",
+      precio: 10.0,
+      slug: "producto-a",
+      imagenes: ["/categorias02.jpg", "/categorias03.jpeg"],
+    },
+    {
+      imagen: "/categorias02.jpg",
+      nombre: "Producto A",
+      descripcion: "Descripción del Producto A, de alta calidad.",
+      precio: 10.0,
+      slug: "producto-a",
+      imagenes: ["/categorias02.jpg", "/categorias03.jpeg"],
+    },
+    {
+      imagen: "/categorias02.jpg",
+      nombre: "Producto A",
+      descripcion: "Descripción del Producto A, de alta calidad.",
+      precio: 10.0,
+      slug: "producto-a",
+      imagenes: ["/categorias02.jpg", "/categorias03.jpeg"],
+    },
+    
   ],
   jugos: [
     {

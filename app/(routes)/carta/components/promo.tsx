@@ -1,11 +1,11 @@
 'use client';
 
 import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Phone } from "lucide-react";
 import Image from "next/image";
@@ -53,15 +53,15 @@ const Promo = () => {
                 </div>
                 <div className="flex px-4 flex-col items-center text-center md:items-start md:text-start lg:px-12">
                   <div className="flex items-center mb-4">
-                    <div className="border-t-2 border-red-600 w-16 mr-4"></div>
-                    <p className="text-[18px] text-red-600 font-semibold py-2 schibsted-grotesk">
-                      Since 1988 Restaurant
+                    <div className="border-t-2 border-orange-600 w-16 mr-4 max-md:hidden "></div>
+                    <p className="text-[18px] text-orange-600 font-semibold py-2 schibsted-grotesk">
+                    Desde 2024 Restaurante
                     </p>
                   </div>
-                  <h1 className="text-3xl text-slate-800 text-start bebas-neue-regular sm:text-5xl font-bold mb-4">
+                  <h1 className="text-3xl max-md:text-center  text-slate-800 text-start bebas-neue-regular sm:text-5xl font-bold mb-4">
                     {promo.title}
                   </h1>
-                  <p className="text-base text-start text-gray-600 mb-6">
+                  <p className="text-base max-md:text-center text-start text-gray-600 mb-6 max-md:mb-0">
                     {promo.description}
                   </p>
                   <div className="flex flex-col md:flex-row lg:justify-start justify-between items-center bebas-neue-regular">
@@ -70,7 +70,7 @@ const Promo = () => {
                       className="mt-6 text-lg md:text-xl px-8 py-3 flex justify-center items-center bg-slate-800 text-white rounded-lg shadow-lg hover:bg-yellow-600 transition duration-300"
                       aria-label="Comprar ahora"
                     >
-                      NUESTRO Restaurante
+                      Pedir Promocion
                     </Link>
                     <h1 className="mt-4 md:mt-7 md:pl-10 text-3xl items-center flex">
                       <span>

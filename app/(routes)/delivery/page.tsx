@@ -24,48 +24,45 @@ const openingTimes: OpeningTime[] = [
 export default function Page() {
   const menuItems = [
     {
-      title: "FULL MENU",
-      image: "categorias01.jpg",
+      title: " MENU",
+      image: "menu.webp",
       href: "/",
     },
     {
-      title: "LUNCH MENU",
-      image: "categorias01.jpg",
+      title: "NOSOTROS",
+      image: "gallery2.webp",
       href: "/",
     },
     {
-      title: "DESSERT MENU",
-      image: "categorias01.jpg",
+      title: "GALERIA",
+      image: "homepatron.webp",
       href: "/",
     },
     {
-      title: "DESSERT MENU",
-      image: "categorias01.jpg",
-      href: "/",
-    },
-    {
-      title: "DESSERT MENU",
-      image: "categorias01.jpg",
-      href: "/",
+      title: "REDES SOCIALES",
+      image: "/redesociales.webp",
+      href: "/redesociales.webp",
     },
   ];
   return (
     <div>
-      <div className="flex flex-col px-4 text-center items-center justify-center max-w-[1000px] mx-auto py-32">
+      <div className="flex flex-col px-4 text-center items-center justify-center lg:max-w-[1000px] mx-auto py-32">
         <h1 className=" md:text-8xl text-5xl text-slate-800 bebas-neue-regular">
-          Colchester
+          Delivery
         </h1>
-        <p className="schibsted-grotesk text-red-600 text-[14px] pb-6 md:text-[18px] font-semibold">
+        <p className="schibsted-grotesk text-orange-600 text-[14px] pb-6 md:text-[18px] font-semibold">
           - Luremy Restaurant -
         </p>
-        <p className="text-xl text-center font-semibold text-slate-800 schibsted-grotesk">
-          Located in the Heart of Colchesters shopping district. Preto
-          Colchester offers a vibrant atmosphere with seating for up to 150
-          guests. We can also offer our private dining area for up to 70 guests
-          to cater for those special occasions or larger groups.
+        <p className="md:text-[18px] text-justify font-semibold text-slate-800 schibsted-grotesk">
+          Ubicado en el distrito Andrés Avelino Cáceres, Restaurante Luremy
+          ofrece un servicio de delivery vibrante que lleva nuestras delicias
+          culinarias a tu puerta en Colchester y sus alrededores. Reserva
+          nuestro espacio para eventos especiales, con capacidad para hasta 20
+          invitados y una zona privada para 5 personas. ¡Prueba nuestro delivery
+          y disfruta lo mejor de Luremy en la comodidad de tu hogar!
         </p>
         <Link
-          href="/allproducts"
+          href="/carta"
           className="mt-6 text-lg md:text-xl px-8 py-3 flex justify-center items-center bg-slate-800 text-white rounded-lg shadow-lg hover:bg-yellow-600 transition duration-300"
           aria-label="Comprar ahora"
         >
@@ -74,7 +71,7 @@ export default function Page() {
       </div>
       <div className="flex max-md:flex-col  justify-evenly   items-start mx-auto max-w-[1330px]">
         <div>
-          <div className="bg-white border-8 mb-10 border-red-400">
+          <div className="bg-white border-8 mb-10 border-orange-600">
             <div className="text-start flex flex-col">
               <h1 className="md:text-5xl  text-4xl font-bold py-8 px-8 text-start text-slate-800 bebas-neue-regular">
                 Preto, Colchester
@@ -83,20 +80,20 @@ export default function Page() {
                 59 High Street <br />
                 Colchester <br /> CO1 1DH
               </p>
-              <p className="flex px-8 py-2 pr-3 items-center text-2xl schibsted-grotesk font-bold text-red-600">
+              <p className="flex px-8 py-2 pr-3 items-center text-2xl schibsted-grotesk font-bold text-orange-600">
                 <span className="pr-4">
                   <BsTelephoneInbound
                     size={25}
-                    className="text-4xl text-red-600 hover:text-orange-400"
+                    className="text-4xl text-orange-600 hover:text-slate-800"
                   />
                 </span>
                 info@preto.co.uk
               </p>
-              <p className="flex px-8 py-2 pr-3 items-center text-2xl schibsted-grotesk font-bold text-red-600">
+              <p className="flex px-8 py-2 pr-3 items-center text-2xl schibsted-grotesk font-bold text-orange-600">
                 <span className="pr-4">
                   <IoMailOpenOutline
                     size={25}
-                    className="text-4xl text-red-600 hover:text-orange-400"
+                    className="text-4xl text-orange-600 hover:text-orange-400"
                   />
                 </span>
                 01206 574569
@@ -109,7 +106,7 @@ export default function Page() {
               <div className="space-y-2 md:text-[18px]  schibsted-grotesk font-bold">
                 {openingTimes.map(({ day, hours }) => (
                   <div key={day} className="flex justify-between">
-                    <span className="text-red-600 font-medium md:pr-32">
+                    <span className="text-orange-600 font-medium md:pr-32">
                       {day}:
                     </span>
                     <span className="text-gray-700">{hours}</span>
@@ -125,7 +122,7 @@ export default function Page() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center">
                   <svg
-                    className="w-6 h-6 mr-2 text-red-600"
+                    className="w-6 h-6 mr-2 text-orange-600"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -136,7 +133,7 @@ export default function Page() {
 
                 <div className="flex items-center">
                   <svg
-                    className="w-6 h-6 mr-2 text-red-600"
+                    className="w-6 h-6 mr-2 text-orange-600"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -147,7 +144,7 @@ export default function Page() {
 
                 <div className="flex items-center">
                   <svg
-                    className="w-6 h-6 mr-2 text-red-600"
+                    className="w-6 h-6 mr-2 text-orange-600"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -162,7 +159,7 @@ export default function Page() {
 
                 <div className="flex items-center">
                   <svg
-                    className="w-6 h-6 mr-2 text-red-600"
+                    className="w-6 h-6 mr-2 text-orange-600"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -173,7 +170,7 @@ export default function Page() {
 
                 <div className="flex items-center">
                   <svg
-                    className="w-6 h-6 mr-2 text-red-600"
+                    className="w-6 h-6 mr-2 text-orange-600"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -215,42 +212,42 @@ export default function Page() {
               </div>
             </div>
           </div>
-          <div className="bg-white border-8 gap-6 border-red-400 h-full w-full">
+          <div className="bg-white border-8 gap-6 border-orange-600 h-full w-full">
             <MapComponent />
           </div>
           <div className="flex max-md:flex-col  justify-around">
-          <Link
-          href="/allproducts"
-          className="mt-6 text-lg md:text-xl px-8 py-3 flex justify-center items-center bg-slate-800 text-white rounded-lg shadow-lg hover:bg-yellow-600 transition duration-300"
-          aria-label="Comprar ahora"
-        >
-          Google Maps
-        </Link>
-        <Link
-          href="/allproducts"
-          className="mt-6 text-lg md:text-xl px-8 py-3 flex justify-center items-center bg-slate-800 text-white rounded-lg shadow-lg hover:bg-yellow-600 transition duration-300"
-          aria-label="Comprar ahora"
-        >
-          Redes sociales
-        </Link>
+            <Link
+              href="/allproducts"
+              className="mt-6 text-lg md:text-xl px-8 py-3 flex justify-center items-center bg-slate-800 text-white rounded-lg shadow-lg hover:bg-yellow-600 transition duration-300"
+              aria-label="Comprar ahora"
+            >
+              Google Maps
+            </Link>
+            <Link
+              href="/allproducts"
+              className="mt-6 text-lg md:text-xl px-8 py-3 flex justify-center items-center bg-slate-800 text-white rounded-lg shadow-lg hover:bg-yellow-600 transition duration-300"
+              aria-label="Comprar ahora"
+            >
+              Redes sociales
+            </Link>
           </div>
         </div>
-        <div className="text-center space-y-6 max-md:max-w-[100%]  max-w-[40%]">
+        <div className="text-center space-y-6 max-md:max-w-[100%] py-20  max-w-[40%]">
           <ul className="space-y-6">
             {menuItems.map((item, index) => (
               <li key={index}>
                 <Link href={item.href} passHref legacyBehavior>
                   <a
-                    className="block relative rounded-lg shadow-lg overflow-hidden  border-8 border-red-600"
+                    className="block relative rounded-lg shadow-lg overflow-hidden  border-8 border-orange-600"
                     aria-label={item.title}
                   >
                     <img
                       src={item.image}
                       alt={item.title}
-                      className=" h-full object-cover transform w-full transition duration-300 hover:scale-105"
+                      className=" h-[280px] object-cover transform w-full transition duration-300 hover:scale-105"
                     />
-                    <div className="absolute inset-0 flex flex-col justify-center items-center transition duration-300 bg-opacity-0 hover:bg-black hover:bg-opacity-50">
-                      <h2 className="text-xl font-bold text-white">
+                    <div className="absolute inset-0 flex flex-col justify-center items-center transition duration-300 bg-opacity-0 hover:bg-black hover:bg-opacity-50 group">
+                      <h2 className="text-xl font-bold text-slate-900 text-center group-hover:text-white schibsted-grotesk">
                         {item.title}
                       </h2>
                     </div>

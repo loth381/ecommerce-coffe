@@ -12,18 +12,26 @@ const ItemsMenuMobile = () => {
         <Menu size={24} />
       </PopoverTrigger>
       <PopoverContent className="w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md p-4">
-        <Link href="/categories/cafe-molido" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
+      <Link href="/" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
+        Inicio
+        </Link>
+        <Link href="/carta" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
         Menu
         </Link>
-        <Link href="/categories/cafe-grano" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
+        <Link href="/about" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
         Nosotros
         </Link>
-        <Link href="/categories/cafe-capsula" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
+        <Link href="/gallery" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
         Galeria
         </Link>
-        <Link href="/categories/cafe-capsula" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
+        <Link href="/delivery" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
           Delivery
         </Link>
+        <Link href="https://maps.app.goo.gl/r2azEc8ZCEoNHAbcA" legacyBehavior passHref>
+      <a className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md" target="_blank" rel="noopener noreferrer">
+        Local
+      </a>
+    </Link>
       </PopoverContent>
     </Popover>
   );

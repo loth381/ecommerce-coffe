@@ -9,7 +9,7 @@ import FeaturedImageGallery from "./components/feacutre";
 
 export default function Page() {
   return (
-    <div>
+    <div className="py-20">
       <FeaturedImageGallery />
     </div>
   );

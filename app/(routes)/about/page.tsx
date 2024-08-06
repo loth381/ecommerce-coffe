@@ -8,24 +8,24 @@ export default function AllProductsPage() {
     <>
       <div>
         <div
-          className="mt-4 bg-no-repeat w-full bg-cover bg-center xl:h-[300px] 2xl:h-[420px] lg:py-8 2xl:py-36 relative text-center items-center inset-0"
+          className="mt-4 pt-20 bg-no-repeat  w-full bg-cover bg-center xl:h-[300px] 2xl:h-[420px] lg:py-20 2xl:py-36 relative text-center items-center inset-0"
           style={{ backgroundImage: "url('/abouthome.jpg')" }}
         >
           <div className="flex justify-center py-5 items-center flex-col md:pt-10 2xl:pt-0">
             <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold bebas-neue-regular">
-              About us
+              Nosotros
             </h1>
             <p className="schibsted-grotesk text-red-600 text-[14px] md:text-[18px] font-semibold">
-              - Luxury restaurant -
+              - Luremy restaurant -
             </p>
           </div>
         </div>
-        <div className="flex max-md:flex-col md:pb-16 gap-6 xl:justify-between items-center  max-w-[1300px] mx-auto">
-          <div className="flex px-8 flex-col items-center text-center md:items-start md:text-start lg:px-24">
-            <h1 className="text-3xl text-slate-800 text-start bebas-neue-regular sm:text-7xl font-bold mb-4">
+        <div className="flex   max-md:flex-col md:pb-16 gap-6 xl:justify-between items-center  max-w-[1300px] mx-auto">
+          <div className="flex  px-8 flex-col items-center text-center md:items-start md:text-start lg:px-24">
+            <h1 className="text-3xl max-md:text-center  text-slate-800 text-start bebas-neue-regular sm:text-7xl font-bold mb-4">
               Every Fla vor Tells a Story
             </h1>
-            <p className="text-base text-start text-gray-600 mb-6">
+            <p className="text-base max-md:text-center  text-start text-gray-600 mb-6">
               Lorem ipsum dolor sit amet consectetur adipiscing elit. Do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Minim veniam
               nostrud exercitation.

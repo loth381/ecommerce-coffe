@@ -9,7 +9,7 @@ import { MdRestaurantMenu } from "react-icons/md";
 import { RiDrinksLine } from "react-icons/ri";
 import { TbSoup } from "react-icons/tb";
 
-const Menupromo = () => {
+const Menu = () => {
   const [selectedCategory, setSelectedCategory] =
     useState<keyof MenuData>("bebidas");
 
@@ -19,23 +19,15 @@ const Menupromo = () => {
 
   return (
     <>
-      <Image
-        src="/menufondo01.png"
-        alt="menu"
-        width={500}
-        height={100}
-        className="absolute  hidden md:block"
-      />
       <div
-        className=" xl:px-40 2xl:px-56 bg-cover bg-center relative  items-center py-28 inset-0 bg-white bg-opacity-50"
-        // style={{ backgroundImage: "url('menufondo.webp')" }}
+        className=" xl:px-40 2xl:px-56 dark:bg-slate-50 bg-cover bg-center relative items-center py-28 inset-0 bg-slate-100 bg-opacity-50"
       >
         <div className="flex flex-col items-center px-2">
-          <p className="text-[20px] font-semibold text-red-700 py-4">
-            Choose delicious
+          <p className="text-[20px] font-semibold text-orange-600 py-4">
+          - Luromy -
           </p>
           <h1 className="text-5xl md:text-7xl font-bold mb-4 bebas-neue-regular text-slate-800">
-            Popular menu
+             Nuestra Carta
           </h1>
           <div className="flex flex-wrap justify-center space-x-4 mb-8 gap-4 md:gap-16 py-8 text-[14px] items-center">
             <button
@@ -50,7 +42,7 @@ const Menupromo = () => {
                 size={40}
                 className="transition-transform duration-300 hover:scale-125"
               />
-              <p className="mt-2">Starters</p>
+              <p className="mt-2">carta</p>
             </button>
             <button
               onClick={() => handleCategoryClick("productos")}
@@ -64,7 +56,7 @@ const Menupromo = () => {
                 size={40}
                 className="transition-transform duration-300 hover:scale-125"
               />
-              <p className="mt-2">Nonvage</p>
+              <p className="mt-2">jugos</p>
             </button>
             <button
               onClick={() => handleCategoryClick("jugos")}
@@ -78,7 +70,7 @@ const Menupromo = () => {
                 size={40}
                 className="transition-transform duration-300 hover:scale-125"
               />
-              <p className="mt-2">Vegetarian</p>
+              <p className="mt-2">helados</p>
             </button>
             <button
               onClick={() => handleCategoryClick("postres")}
@@ -92,7 +84,7 @@ const Menupromo = () => {
                 size={40}
                 className="transition-transform duration-300 hover:scale-125"
               />
-              <p className="mt-2">Dessert</p>
+              <p className="mt-2">cafe</p>
             </button>
             <button
               onClick={() => handleCategoryClick("bebidas")}
@@ -106,7 +98,7 @@ const Menupromo = () => {
                 size={40}
                 className="transition-transform duration-300 hover:scale-125"
               />
-              <p className="mt-2">Drinks</p>
+              <p className="mt-2">menu</p>
             </button>
           </div>
         </div>
@@ -127,16 +119,16 @@ const Menupromo = () => {
                   </figure>
                   <div className="flex flex-col justify-between flex-1">
                     <div className="flex items-center mb-3">
-                      <h3 className="text-xl font-semibold text-gray-800 relative">
+                      <h3 className="text-xl  text-gray-800 relative schibsted-grotesk font-semibold">
                         {item.nombre}
                         <span className="absolute left-0 bottom-0 h-0.5 bg-gray-300 w-full transition-all duration-300 transform scale-x-0 hover:scale-x-100"></span>
                       </h3>
                       <div className="flex-grow border-b border-dotted border-slate-800 mx-2" />
-                      <p className="font-semibold text-lg text-gray-800">
+                      <p className="font-semibold text-lg text-gray-800 schibsted-grotesk ">
                         S/{item.precio.toFixed(2)}
                       </p>
                     </div>
-                    <p className="text-sm text-gray-700">{item.descripcion}</p>
+                    <p className="text-sm text-gray-700 schibsted-grotesk font-semibold">{item.descripcion}</p>
                   </div>
                 </div>
               </Link>
@@ -156,10 +148,11 @@ const Menupromo = () => {
           >
             ver todo el menú
           </Link>
+         
         </div>
       </div>
     </>
   );
 };
 
-export default Menupromo;
+export default Menu;

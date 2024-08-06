@@ -1,44 +1,4 @@
-"use client";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import ItemsMenuMobile from "./items-menu-mobile";
-import MenuList from "./menu-list";
-import ToggleTheme from "./toggle-theme";
-
-const Navbar = () => {
-  const router = useRouter();
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-  
-
-  return (
-    <div
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-around p-4 mx-auto cursor-pointer transition-all duration-300 ${
-        isScrolled ? "bg-white text-black  shadow-md" : "bg-transparent text-slate-800"
-      }`}
-    >
-      <h1
-        className={`text-2xl ${
-          isScrolled ? "text-black" : "text-slate-800"
-        }`}
-        onClick={() => router.push("/")}
-      >
-       <svg className="w-[200px]" width="361" height="auto" viewBox="0 0 361 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="361" height="135" viewBox="0 0 361 135" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M71.1606 47.9311C76.8842 47.6753 81.2489 43.9981 79.714 35.8604C78.1792 27.7386 70.5211 26.7954 70.5211 26.7954C71.4164 28.7619 71.4964 32.7908 71.4964 32.7908C67.0518 18.0021 53.2704 19.3131 53.2704 19.3131C53.2704 19.3131 39.489 17.9862 35.0445 32.7908C35.0445 32.7908 35.1244 28.7619 36.0197 26.7954C36.0197 26.7954 28.3456 27.7386 26.8108 35.8604C25.276 43.9821 29.6406 47.6753 35.3642 47.9311C41.0878 48.1869 42.7025 45.3571 42.7025 45.3571C42.7025 45.3571 40.5282 49.29 34.6288 49.7217C34.6288 49.7217 37.7783 52.2957 38.4978 57.5077C38.4978 57.5077 41.2157 60.8172 53.1905 60.8491H53.3344C65.2932 60.8172 68.027 57.5077 68.027 57.5077C68.7465 52.2957 71.8961 49.7217 71.8961 49.7217C65.9966 49.29 63.8223 45.3571 63.8223 45.3571C63.8223 45.3571 65.437 48.1869 71.1606 47.9311Z" fill="#1D1D1B"/>
 <path d="M67.723 59.3143C63.4543 62.5598 54.5332 62.2401 53.3341 62.1761H53.1902C51.9911 62.2401 43.054 62.5598 38.8013 59.3143C38.8013 59.3143 39.5527 62.2241 39.5047 64.1106C39.5047 64.1106 43.5176 67.8038 53.2701 67.2442C63.0066 67.7878 67.0355 64.1106 67.0355 64.1106C66.9876 62.2241 67.739 59.3143 67.739 59.3143H67.723Z" fill="#1D1D1B"/>
 <path d="M33.8301 108.46L30.9683 111.274C30.9683 111.274 30.9683 116.598 36.452 117.078L39.4257 113.864C36.2602 112.729 34.5655 110.027 33.8301 108.46Z" fill="#1D1D1B"/>
@@ -71,19 +31,3 @@ const Navbar = () => {
 <path d="M53.2709 0L54.9177 4.81229H60.2256L55.9249 7.77001L57.5716 12.5823L53.2709 9.6086L48.9702 12.5823L50.601 7.77001L46.3003 4.81229H51.6242L53.2709 0Z" fill="#1D1D1B"/>
 <path d="M77.189 0L78.8358 4.81229H84.1437L79.843 7.77001L81.4897 12.5823L77.189 9.6086L72.8883 12.5823L74.5351 7.77001L70.2344 4.81229H75.5423L77.189 0Z" fill="#1D1D1B"/>
 </svg>
-
-      </h1>
-      <div className="items-center justify-between hidden sm:flex">
-        <MenuList isScrolled={isScrolled} />
-      </div>
-      <div className="flex sm:hidden">
-        <ItemsMenuMobile />
-      </div>
-      <div className="flex items-center gap-4 sm:gap-6">
-        <ToggleTheme />
-      </div>
-    </div>
-  );
-};
-
-export default Navbar;
